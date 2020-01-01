@@ -1,0 +1,107 @@
+// Here is my config file for the new Windows Terminal app
+// It includes making cmd the default when openning the app,
+// acrylic background for cmd and a custom color theme (Monokai).
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    // "alwaysShowTabs": true,
+    // "showTabsInTitlebar": true,
+    // "showTerminalTitleInTitlebar": true,
+    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+    
+    "profiles":
+    [
+	{
+            // Make changes here to the powershell.exe profile
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "name": "Windows PowerShell",
+            "commandline": "powershell.exe",
+            "hidden": false
+        },        
+	{
+            // Make changes here to the cmd.exe profile
+	    "acrylicOpacity": 0.6,
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "name": "@saywa",
+            "commandline": "cmd.exe",
+            "hidden": false,
+	    "startingDirectory": "%USERPROFILE%/Desktop",
+            "cursorShape": "bar",
+	    "padding": "18, 0, 8, 0",
+            "fontFace": "mononoki NF",
+	    "colorScheme": "Monokai",
+	 // "colorScheme": "Campbell",
+	 // "colorScheme": "Vintage",
+	 // "colorScheme": "Solarized Dark",
+	 // "colorScheme": "Solarized Light",
+	    "useAcrylic": true
+	    
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": false,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure"
+        },
+        {
+            "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+            "hidden": false,
+            "name": "Ubuntu",
+            "source": "Windows.Terminal.Wsl"
+        }
+    ],
+
+    // Add custom color schemes to this array
+    "schemes": [
+	{
+            "name": "Solarized Dark",
+            "foreground": "#839496",
+            "background": "#12131c",
+            "black": "#073642",
+            "red": "#DC322F",
+            "green": "#859900",
+            "yellow": "#B58900",
+            "blue": "#268BD2",
+            "purple": "#D33682",
+            "cyan": "#2AA198",
+            "white": "#EEE8D5",
+            "brightBlack": "#002B36",
+            "brightRed": "#CB4B16",
+            "brightGreen": "#586E75",
+            "brightYellow": "#657B83",
+            "brightBlue": "#839496",
+            "brightPurple": "#6C71C4",
+            "brightCyan": "#93A1A1",
+            "brightWhite": "#FDF6E3"
+        },
+	{
+    "name": "Monokai",
+    "foreground": "#F8F8F0",
+    "background": "#282828",
+    "cursor": "#f8f8f0",
+    "cursorAccent": "#272822",
+    "selection": "rgba(73, 72, 62, 0.3)",
+    "black": "#2E3436",
+    "red": "#CB064D",
+    "green": "#8dd006",
+    "yellow": "#e6db74",
+    "blue": "#0376dd",
+    "purple": "#9d74e6",
+    "cyan": "#52aebf",
+    "white": "#F8F8F2",
+    "brightBlack": "#555753",
+    "brightRed": "#F92672", // #f3044b
+    "brightGreen": "#A6E22E",
+    "brightYellow": "#FED330",
+    "brightBlue": "#0383f5",
+    "brightPurple": "#AE81FF",
+    "brightCyan": "#66D9EF",
+    "brightWhite": "#F8F8F0"
+  	}
+
+],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": []
+}
