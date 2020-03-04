@@ -8,14 +8,15 @@
 call plug#begin('~/.vim/plugged')
 " Delcare the list of plugins here.
 Plug 'junegunn/goyo.vim'
-Plug 'plasticboy/vim-markdown'
+"""Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
-" Plug 'mcmartelle/vim-monokai-bold'
+"""Plug 'mcmartelle/vim-monokai-bold'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " vim-markdown plugin settings:
@@ -36,18 +37,32 @@ set number
 set mouse=a
 set visualbell
 set nobackup
+set scrolloff=50
 
 " Make it pretty
 syntax enable
 filetype plugin indent on
 color darkblue 
 
+" settings to make coc-vim better
+set updatetime=300
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Activate all the handy windows key-bindings
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " Configuration de l'affichage de la date et de la position dans le fichier
-set rulerformat=%27(%{strftime('%a\ %e\ %b\ %I:%M\ %p')}\ %2l,%-2(%c%V%)\ %P%)i
+"""set rulerformat=%27(%{strftime('%a\ %e\ %b\ %I:%M\ %p')}\ %2l,%-2(%c%V%)\ %P%)i
 
 " --- history / file handling ---
 set history=999             " Increase history (default = 20)
@@ -101,12 +116,11 @@ map <C-t>  :tabnew <CR>
 nmap <C-Right> :tabnext <CR>
 nmap <C-Left>  :tabprevious <CR> 
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <C-h> :call WinMove('h')<cr>
+map <C-g> :call WinMove('h')<cr>
 map <C-j> :call WinMove('j')<cr>
 map <C-k> :call WinMove('k')<cr>
 map <C-l> :call WinMove('l')<cr>
