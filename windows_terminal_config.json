@@ -1,3 +1,4 @@
+
 // Here is my config file for the new Windows Terminal app
 // It includes making cmd the default when openning the app,
 // acrylic background for cmd and a custom color theme (Monokai).
@@ -7,8 +8,8 @@
     // "alwaysShowTabs": true,
     // "showTabsInTitlebar": true,
     // "showTerminalTitleInTitlebar": true,
-    "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-    
+    "defaultProfile": "{66c99eff-e1f5-46d1-bc5c-1f7ad56611b2}",
+
     "profiles":
     [
 	{
@@ -17,29 +18,29 @@
             "name": "Windows PowerShell",
             "commandline": "powershell.exe",
             "hidden": false
-        },        
+        },
 	{
-            // Make changes here to the cmd.exe profile
-	    "acrylicOpacity": 0.6,
+            // Make changes here to the cmd.exe
+            "acrylicOpacity": 0.75,
             "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
             "name": "@saywa",
             "commandline": "cmd.exe",
             "hidden": false,
-	    "startingDirectory": "%USERPROFILE%/Desktop",
+            "startingDirectory": "%USERPROFILE%/Desktop",
             "cursorShape": "bar",
-	    "padding": "18, 0, 8, 0",
+            "padding": "18, 0, 8, 0",
             "fontFace": "mononoki NF",
-	    "colorScheme": "Monokai",
+            "colorScheme": "Monokai",
 	 // "colorScheme": "Campbell",
 	 // "colorScheme": "Vintage",
 	 // "colorScheme": "Solarized Dark",
 	 // "colorScheme": "Solarized Light",
-	    "useAcrylic": true
-	    
+            "useAcrylic": true
+
         },
         {
             "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-            "hidden": false,
+            "hidden": true,
             "name": "Azure Cloud Shell",
             "source": "Windows.Terminal.Azure"
         },
@@ -47,12 +48,56 @@
             "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
             "hidden": false,
             "name": "Ubuntu",
-            "source": "Windows.Terminal.Wsl"
+            "colorScheme": "Dracula",
+            "source": "Windows.Terminal.Wsl",
+            "cursorShape": "emptyBox",
+		// Put your image here. Mine is a linux penguin
+            "backgroundImage": "C:/Users/aywac/Onedrive/Images/linux_logo.png",
+            "backgroundImageOpacity" : 0.5,
+            "fontSize": 11,
+            "acrylicOpacity": 0.8,
+            "useAcrylic": true
+        },
+
+        {
+            "guid": "{66c99eff-e1f5-46d1-bc5c-1f7ad56611b2}",
+            "commandline" : "cmd.exe /k %CMDER_ROOT%\\vendor\\init.bat",
+            "name" : "coding",
+            "startingDirectory" : "%USERPROFILE%/OneDrive/Coding/Python",
+            "icon" : " %cmder_root%/icons/cmder.ico",
+            "fontFace": "mononoki NF",
+            "colorScheme": "Monokai",
+            "cursorShape": "emptyBox",
+            "fontSize": 11,
+            "hidden": false,
+            "acrylicOpacity": 0.7,
+            "useAcrylic": true
         }
     ],
 
     // Add custom color schemes to this array
     "schemes": [
+	{
+            "name": "cCampbell",
+            "foreground": "#CCCCCC",
+            "background": "#12131c",
+            "black": "#0C0C0C",
+            "red": "#C50F1F",
+            "green": "#13A10E",
+            "yellow": "#C19C00",
+            "blue": "#0037DA",
+            "purple": "#881798",
+            "cyan": "#3A96DD",
+            "white": "#75abd1",
+            "brightBlack": "#767676",
+            "brightRed": "#E74856",
+            "brightGreen": "#16C60C",
+            "brightYellow": "#F9F1A5",
+            "brightBlue": "#3B78FF",
+            "brightPurple": "#B4009E",
+            "brightCyan": "#61D6D6",
+            "brightWhite": "#75abd1"
+        },
 	{
             "name": "Solarized Dark",
             "foreground": "#839496",
@@ -74,30 +119,51 @@
             "brightCyan": "#93A1A1",
             "brightWhite": "#FDF6E3"
         },
-	{
-    "name": "Monokai",
-    "foreground": "#F8F8F0",
-    "background": "#282828",
-    "cursor": "#f8f8f0",
-    "cursorAccent": "#272822",
-    "selection": "rgba(73, 72, 62, 0.3)",
-    "black": "#2E3436",
-    "red": "#CB064D",
-    "green": "#8dd006",
-    "yellow": "#e6db74",
-    "blue": "#0376dd",
-    "purple": "#9d74e6",
-    "cyan": "#52aebf",
-    "white": "#F8F8F2",
-    "brightBlack": "#555753",
-    "brightRed": "#F92672", // #f3044b
-    "brightGreen": "#A6E22E",
-    "brightYellow": "#FED330",
-    "brightBlue": "#0383f5",
-    "brightPurple": "#AE81FF",
-    "brightCyan": "#66D9EF",
-    "brightWhite": "#F8F8F0"
-  	}
+    {
+            "name": "Monokai",
+            "foreground": "#F8F8F0",
+            "background": "#282828",
+            "cursor": "#f8f8f0",
+            "cursorAccent": "#272822",
+            "selection": "rgba(73, 72, 62, 0.3)",
+            "black": "#2E3436",
+            "red": "#CB064D",
+            "green": "#8dd006",
+            "yellow": "#e6db74",
+            "blue": "#0376dd",
+            "purple": "#9d74e6",
+            "cyan": "#52aebf",
+            "white": "#F8F8F2",
+            "brightBlack": "#555753",
+            "brightRed": "#F92672", // #f3044b
+            "brightGreen": "#A6E22E",
+            "brightYellow": "#FED330",
+            "brightBlue": "#0383f5",
+            "brightPurple": "#AE81FF",
+            "brightCyan": "#66D9EF",
+            "brightWhite": "#F8F8F0"
+        },
+        {
+    "name" : "Dracula",
+    "background" : "#272935",
+    "black" : "#272935",
+    "blue" : "#BD93F9",
+    "brightBlack" : "#555555",
+    "brightBlue" : "#BD93F9",
+    "brightCyan" : "#8BE9FD",
+    "brightGreen" : "#50FA7B",
+    "brightPurple" : "#FF79C6",
+    "brightRed" : "#FF5555",
+    "brightWhite" : "#FFFFFF",
+    "brightYellow" : "#F1FA8C",
+    "cyan" : "#6272A4",
+    "foreground" : "#F8F8F2",
+    "green" : "#50FA7B",
+    "purple" : "#6272A4",
+    "red" : "#FF5555",
+    "white" : "#F8F8F2",
+    "yellow" : "#FFB86C"
+}
 
 ],
 
