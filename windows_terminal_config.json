@@ -1,7 +1,9 @@
-
 // Here is my config file for the new Windows Terminal app
 // It includes making cmd the default when openning the app,
 // acrylic background for cmd and a custom color theme (Monokai).
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
 
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
@@ -51,7 +53,6 @@
             "colorScheme": "Dracula",
             "source": "Windows.Terminal.Wsl",
             "cursorShape": "emptyBox",
-		// Put your image here. Mine is a linux penguin
             "backgroundImage": "C:/Users/aywac/Onedrive/Images/linux_logo.png",
             "backgroundImageOpacity" : 0.5,
             "fontSize": 11,
@@ -68,6 +69,7 @@
             "fontFace": "mononoki NF",
             "colorScheme": "Monokai",
             "cursorShape": "emptyBox",
+            "padding": "5, 0, 0, 0",
             "fontSize": 11,
             "hidden": false,
             "acrylicOpacity": 0.7,
