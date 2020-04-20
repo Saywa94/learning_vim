@@ -4,6 +4,12 @@
 "  |/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|
 " Config file for vim
 
+" To automate vimplug installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 " Plugins using vim-plug manager
 call plug#begin('~/.vim/plugged')
 " Delcare the list of plugins here.
